@@ -1,0 +1,26 @@
+version: '3'
+services:
+  cosigner:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    expose:
+      - "8080"
+    networks:
+      - cosignernet
+    restart: always
+  nginx:
+    image: nginx:latest
+    depends_on:
+      - cosigner
+    networks:
+      - cosignernet
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./config/proxy_headers.conf:/etc/nginx/proxy_headers.conf:ro
+
+networks:
+    cosignernet:
+        external: true
