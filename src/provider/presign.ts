@@ -18,6 +18,8 @@ import {
     Cosigner
 } from '../types'
 
+import authorizer from '../service/authorizer'
+
 import { cosignTransaction } from '../utils/cosign'
 import { prependNoopAction } from '../utils/noop'
 import { parseRequest } from '../utils/parse'
@@ -72,7 +74,7 @@ export const presign = async (
         })
         return serveResponse(res, 400, message)
     }
-
+    console.log('body', JSON.stringify(body, null, 4))
     // Process the body of the request
     const request = await parseRequest(body)
 
@@ -84,6 +86,11 @@ export const presign = async (
         })
         return serveResponse(res, 400, message)
     }
+    request.getRawActions().forEach((action: any) => {
+        console.log('action', JSON.stringify(action, null, 4))
+    })
+    console.log('request', JSON.stringify(request, null, 4))
+    console.log('isAuthorized', authorizer.isAuthorized(request))
 
     // Ensure a signer is specified
     if (!body.signer) {

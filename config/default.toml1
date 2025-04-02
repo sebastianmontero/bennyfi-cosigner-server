@@ -4,26 +4,37 @@ port = 8080
 
 [eosio]
 # The default API server for requests
-api_default = 'http://jungle3.greymass.com'
+# apiDefault = 'http://jungle4.greymass.com'
+apiDefault = 'http://localhost:8888'
 
 # A modified nodeos instance to sample transaction billing times
 #   https://github.com/greymass/eos/tree/skip_all_checks
-api_sampler = 'http://jungle3.greymass.com'
+# api_sampler = 'http://jungle4.greymass.com'
+api_sampler = 'http://localhost:8888'
 
 # The ID of the chain in use
-chain_id = '2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840'
-system_token = '4,EOS'
+# chain_id = '2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840'
+chain_id = '8a34ec7df1b8cd06ff4a8abbaa7cc50300823350cadc59ab296cb00d104d2b8f'
+# system_token = '4,EOS'
+system_token = '4,TLOS'
 
 # The maximum number of milliseconds for any transaction
 max_cpu_usage_ms = 5
 
 [account]
 # Name and Permission of the account to sign with (should be a key permissions linked only to greymassnoop:noop)
-#   example: 'cosign' key permission on 'cosigncosign' account 
+#   example: 'cosign' key permission on 'cosigncosign' account
 #            https://jungle3.bloks.io/account/cosigncosign#keys
 name = 'cosigncosign'
 permission = 'cosign'
 
+[authorize]
+bennyfi_contract = 'bennyfi'
+bennyfi_actions = "setauth,setauthlevel,setprofile,enterpool"
+xchange_contracst = 'bennyxchange'
+xchange_actions = "makeoffer,acceptoffer,deleteoffer"
+token_contract = 'eosio.token'
+token_actions = 'create,issue'
 # Private Key for the above permission
 key = '5KKpyicaUXaRvTKN54JYK1GEeu6FN3s3YyRLPdrHNp2prV7m96x'
 

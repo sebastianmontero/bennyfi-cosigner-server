@@ -5,18 +5,23 @@
     "@types/lodash": "^4.14.162",
     "@types/node-fetch": "^2.5.7",
     "bunyan": "^1.8.14",
-    "config": "3.2.4",
+    "config": "^3.3.12",
     "eosio-signing-request": "2.2.2",
     "find-my-way": "^3.0.4",
     "lodash": "^4.17.20",
     "node": "^12.0.8",
     "node-fetch": "^2.6.0",
-    "toml": "2.3.6"
+    "toml": "2.3.6",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/bunyan": "1.8.6",
     "@types/config": "0.0.34",
     "@types/text-encoding": "^0.0.35",
+    "@wharfkit/mock-data": "^1.3.0",
+    "@wharfkit/session": "^1.5.1",
+    "@wharfkit/transact-plugin-resource-provider": "^1.1.1",
+    "@wharfkit/wallet-plugin-privatekey": "^1.1.0",
     "onchange": "^6.0.0",
     "ts-node": "^8.10.2",
     "tslint": "^5.17.0",
@@ -25,10 +30,13 @@
   "engines": {
     "node": ">=10"
   },
-  "name": "eosio-cosigner",
+  "scripts": {
+    "start": "nodemon --exec ts-node src/index.ts"
+  },
+  "name": "bennyfi-cosigner-server",
   "version": "0.0.1",
   "main": "index.js",
-  "author": "Greymass Inc.",
+  "author": "Bennyfi",
   "license": "MIT",
   "private": true
 }

@@ -6,8 +6,11 @@ import {
     logger,
 } from './common'
 import version from './version'
+import {validateConfig} from './utils/config-validation'
 
 export async function main() {
+
+    validateConfig()
     // Await the creation of the HTTP server
     await createHttpServer
     // Retrieve chainId from the API server being used

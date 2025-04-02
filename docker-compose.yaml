@@ -23,4 +23,4 @@ services:
 
 networks:
     cosignernet:
-        external: true
+        external: false

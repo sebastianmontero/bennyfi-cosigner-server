@@ -1,0 +1,52 @@
+{
+    "server": {
+        "name": "cosigner",
+        "port": 8080
+    },
+    "eosio": {
+        "apiDefault": "http://localhost:8888",
+        "apiSampler": "http://localhost:8888",
+        "chainId": "8a34ec7df1b8cd06ff4a8abbaa7cc50300823350cadc59ab296cb00d104d2b8f",
+        "systemToken": "4,TLOS",
+        "maxCpuUsageMs": 5
+    },
+    "account": {
+        "name": "cosigncosign",
+        "permission": "cosign",
+        "key": "5KKpyicaUXaRvTKN54JYK1GEeu6FN3s3YyRLPdrHNp2prV7m96x"
+    },
+    "authorize": {
+        "bennyfi": {
+            "contract": "bennyfi",
+            "actions": [
+                "setauth",
+                "setauthlevel",
+                "setprofile",
+                "enterpool",
+                "withdraw",
+                "withdrawtot"
+            ]
+        },
+        "xchange": {
+            "contract": "bennyxchange",
+            "actions": [
+                "makeoffer",
+                "acceptoffer",
+                "deleteoffer"
+            ]
+        },
+        "token": {
+            "contract": "eosio.token",
+            "actions": [
+                "create",
+                "issue"
+            ]
+        }
+    },
+    "log": [
+        {
+            "level": "debug",
+            "out": "stdout"
+        }
+    ]
+}

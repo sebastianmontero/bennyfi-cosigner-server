@@ -4,13 +4,13 @@ import { Checksum256Type } from '@greymass/eosio'
 //      These should be base level URLs (https://eos.greymass.com)
 export interface APIConfig {
     // API Client - basic node
-    api_default: string
+    apiDefault: string
     // API Client - sampler node
-    api_sampler: string
-    // The chain_id for this chain
-    chain_id: Checksum256Type
+    apiSampler: string
+    // The chainId for this chain
+    chainId: Checksum256Type
     // System Token
-    system_token: string
+    systemToken: string
 }
 
 export interface ServerConfig {
