@@ -1,0 +1,19 @@
+{
+    "request": {
+        "path": "http://localhost:8080/v1/resource_provider/request_transaction",
+        "params": {
+            "method": "POST",
+            "body": "{\"request\":\"esr://gmPsMnlT-3HHWbb_Xl27V9UcZWZoMg44dSdytWbOBl4BX-1-JmvPt-l_mR53t3MzAAEjEB_QtV9uxcDQMeXa6k8hjAJOHDcPlvo-BskyTNh4SoABCuASQD0A\",\"signer\":{\"actor\":\"wharfkit1111\",\"permission\":\"test\"}}"
+        }
+    },
+    "status": 400,
+    "json": {
+        "code": 400,
+        "message": "Unexpected error while processing request.",
+        "data": {
+            "error": "account_query_exception: Account Query Exception at /v1/chain/get_account",
+            "url": "/v1/resource_provider/request_transaction"
+        }
+    },
+    "text": "{\"code\":400,\"message\":\"Unexpected error while processing request.\",\"data\":{\"error\":\"account_query_exception: Account Query Exception at /v1/chain/get_account\",\"url\":\"/v1/resource_provider/request_transaction\"}}"
+}

@@ -4,6 +4,13 @@ import { Session } from "@wharfkit/session"
 import { WalletPluginPrivateKey } from "@wharfkit/wallet-plugin-privatekey"
 import {TransactPluginResourceProvider} from '@wharfkit/transact-plugin-resource-provider'
 
+import {
+    makeClient,
+    makeMockTransaction,
+    mockSession,
+    mockSessionArgs,
+    mockSessionOptions,
+} from '@wharfkit/mock-data'
 
 const chain = {
     id: "8a34ec7df1b8cd06ff4a8abbaa7cc50300823350cadc59ab296cb00d104d2b8f",
@@ -17,6 +24,24 @@ const privateKey = "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
 describe('resource provider', () => {
     let session
     before(() => {
+        // session = new Session(
+        //     {
+        //         ...mockSessionArgs,
+        //         actor: "userc",
+        //         permission: "active",
+        //         chain,
+        //     },
+        //     {
+        //         ...mockSessionOptions,
+        //         transactPlugins:[new TransactPluginResourceProvider({
+        //             endpoints: {
+        //                 [chain.id]:
+        //                     'http://localhost:8080',
+        //             },
+        //         })],
+        //     }
+        // )
+
         session = new Session({
             actor: "userc",
             permission: "active",
@@ -31,6 +56,21 @@ describe('resource provider', () => {
             })]
         })
     })
+    // before(() => {
+    //     session = new Session({
+    //         actor: "userc",
+    //         permission: "active",
+    //         walletPlugin: new WalletPluginPrivateKey(privateKey),
+    //         chain,
+    //     }, {
+    //         transactPlugins:[new TransactPluginResourceProvider({
+    //             endpoints: {
+    //                 [chain.id]:
+    //                     'http://localhost:8080',
+    //             },
+    //         })]
+    //     })
+    // })
     it('should enter round', async () => {
         const enterRound = {
             account: "bennyfi",

@@ -1,0 +1,16 @@
+{
+    "request": {
+        "path": "http://localhost:8080/v1/resource_provider/request_transaction",
+        "params": {
+            "method": "POST",
+            "body": "{\"request\":\"esr://gmPsMnlT-3HHWbb_Xl27V9UcZWZoMg44dSdytWbOBl4BX-1-JmvPt-l_mR53t3MzAAEjw7ImE-ZXBqFAdriuzdmzjAJOHDcPlvo-BskyTNh4ShPMKBG9BqIaikWvvWAGizAwO7n6RQJpjpKixLzitNQioGEMAA\",\"signer\":{\"actor\":\"wharfkit1111\",\"permission\":\"test\"}}"
+        }
+    },
+    "status": 404,
+    "json": {
+        "message": "Route POST:/v1/resource_provider/request_transaction not found",
+        "error": "Not Found",
+        "statusCode": 404
+    },
+    "text": "{\"message\":\"Route POST:/v1/resource_provider/request_transaction not found\",\"error\":\"Not Found\",\"statusCode\":404}"
+}
